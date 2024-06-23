@@ -31,7 +31,7 @@ jobs:
     - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
       with:
         pin-name: 'otk-data'
-        path: './'
+        path: './exp'
         pinata-api-key: ${{ secrets.PINATA_KEY }}
         pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
         verbose: false
