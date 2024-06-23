@@ -28,11 +28,20 @@ jobs:
 #        pinataKey: ${{ secrets.PINATA_KEY }}
 #        pinataSecret: ${{ secrets.PINATA_SECRET }}
 
-    - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+#    - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+#      with:
+#        pin-name: 'otk-data'
+#        path: './'
+#        pinata-api-key: ${{ secrets.PINATA_KEY }}
+#        pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
+#        verbose: false
+#        remove-old: true
+
+    - name: IPFS Publish
+      id: IPFS
+      uses: alexanderschau/ipfs-pinning-action@master
       with:
-        pin-name: 'otk-data'
-        path: './'
-        pinata-api-key: ${{ secrets.PINATA_KEY }}
-        pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
-        verbose: false
-        remove-old: true
+        path_to_add: './' #Required
+        endpoint: 'https://api.pinata.cloud/ps' #Required
+        access_token: ${{ secrets.PINATA_JWT }} #Required
+        pin_name: 'otk-data' #Optional
