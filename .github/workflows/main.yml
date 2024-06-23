@@ -19,11 +19,20 @@ jobs:
 #        filebaseKey: ${{ secrets.FILEBASE_KEY }}
 #        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
 
-    - uses: aquiladev/ipfs-action@master
-      id: upload2
+#    - uses: aquiladev/ipfs-action@master
+#      id: upload2
+#      with:
+#        path: ./
+#        service: pinata
+#        pinName: 'otk-data'
+#        pinataKey: ${{ secrets.PINATA_KEY }}
+#        pinataSecret: ${{ secrets.PINATA_SECRET }}
+
+    - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
       with:
-        path: ./
-        service: pinata
-        pinName: 'otk-data'
-        pinataKey: ${{ secrets.PINATA_KEY }}
-        pinataSecret: ${{ secrets.PINATA_SECRET }}
+        pin-name: 'otk-data'
+        path: './'
+        pinata-api-key: ${{ secrets.PINATA_KEY }}
+        pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
+        verbose: true
+        remove-old: false
