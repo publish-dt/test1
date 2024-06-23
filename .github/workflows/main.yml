@@ -14,7 +14,7 @@ jobs:
       with:
         path: ./
         service: filebase
-        pinName: 'ipfs-action'
+        pinName: 'github-action'
         filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
         filebaseKey: ${{ secrets.FILEBASE_KEY }}
         filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
@@ -24,6 +24,6 @@ jobs:
       with:
         path: ./
         service: pinata
-        pinName: 'ipfs-action'
+        pinName: 'otk-data'
         pinataKey: ${{ secrets.PINATA_KEY }}
         pinataSecret: ${{ secrets.PINATA_SECRET }}
