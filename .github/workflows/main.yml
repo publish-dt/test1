@@ -42,6 +42,6 @@ jobs:
       uses: alexanderschau/ipfs-pinning-action@v1.0.0
       with:
         path_to_add: './' #Required
-        endpoint: 'https://api.pinata.cloud/ps' #Required
+        endpoint: 'https://api.pinata.cloud/psa' #Required
         access_token: ${{ secrets.PINATA_JWT }} #Required
         pin_name: 'otk-data' #Optional
