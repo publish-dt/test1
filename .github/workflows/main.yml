@@ -28,20 +28,21 @@ jobs:
 #        pinataKey: ${{ secrets.PINATA_KEY }}
 #        pinataSecret: ${{ secrets.PINATA_SECRET }}
 
-#    - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
-#      with:
-#        pin-name: 'otk-data'
-#        path: './'
-#        pinata-api-key: ${{ secrets.PINATA_KEY }}
-#        pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
-#        verbose: false
-#        remove-old: true
-
-    - name: IPFS Publish
-      id: IPFS
-      uses: alexanderschau/ipfs-pinning-action@v1.0.0
+    - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
       with:
-        path_to_add: './' #Required
-        endpoint: 'https://api.pinata.cloud/psa' #Required
-        access_token: ${{ secrets.PINATA_JWT }} #Required
-        pin_name: 'otk-data' #Optional
+        pin-name: 'otk-data'
+        path: './'
+        pinata-api-key: ${{ secrets.PINATA_KEY }}
+        pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
+        verbose: false
+        remove-old: true
+
+# Нужен платный тариф для закрепления по CID
+#    - name: IPFS Publish
+#      id: IPFS
+#      uses: alexanderschau/ipfs-pinning-action@v1.0.0
+#      with:
+#        path_to_add: './' #Required
+#        endpoint: 'https://api.pinata.cloud/psa' #Required
+#        access_token: ${{ secrets.PINATA_JWT }} #Required
+#        pin_name: 'otk-data' #Optional
