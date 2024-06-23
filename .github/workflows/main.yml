@@ -39,7 +39,7 @@ jobs:
 
     - name: IPFS Publish
       id: IPFS
-      uses: alexanderschau/ipfs-pinning-action@master
+      uses: alexanderschau/ipfs-pinning-action@1.1.0
       with:
         path_to_add: './' #Required
         endpoint: 'https://api.pinata.cloud/ps' #Required
