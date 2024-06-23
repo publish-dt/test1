@@ -9,15 +9,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-#    - uses: aquiladev/ipfs-action@master
-#      id: upload
-#      with:
-#        path: ./
-#        service: filebase
-#        pinName: 'ipfs-action'
-#        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
-#        filebaseKey: ${{ secrets.FILEBASE_KEY }}
-#        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
+    - uses: aquiladev/ipfs-action@master
+      id: upload
+      with:
+        path: ./
+        service: filebase
+        pinName: 'ipfs-action'
+        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
+        filebaseKey: ${{ secrets.FILEBASE_KEY }}
+        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
 
     - uses: aquiladev/ipfs-action@master
       id: upload2
