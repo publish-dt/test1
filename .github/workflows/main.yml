@@ -29,6 +29,7 @@ jobs:
 #        pinataSecret: ${{ secrets.PINATA_SECRET }}
 
     - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+      id: upload
       with:
         pin-name: 'otk-data'
         path: './exp'
@@ -46,3 +47,5 @@ jobs:
 #        endpoint: 'https://api.pinata.cloud/psa' #Required
 #        access_token: ${{ secrets.PINATA_JWT }} #Required
 #        pin_name: 'otk-data' #Optional
+
+    - run: curl -H "Content-Type:application/json" -H "apikey:${{ secrets.FREEDOMAIN_API_KEY }}" -H "domain:${{ secrets.FREEDOMAIN_DOMAIN }}" --data "{\"update\":{\"type\":\"TXT\",\"name\":\"_dnslink.otk-data.publicvm.com.\",\"content\":\"dnslink=/ipfs/${{ steps.upload.outputs.hash }}\",\"ttl\":0,\"overwrite\":true}}" https://api.dnsexit.com/dns/
